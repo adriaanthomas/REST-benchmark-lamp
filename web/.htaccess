@@ -1,0 +1,14 @@
+DirectoryIndex index.php
+<IfModule mod_rewrite.c>
+        RewriteEngine On
+	RewriteBase /~$USER
+#        RewriteRule ^$ simple.php [QSA,L]
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+	ErrorDocument 404 /simple.php
+</IfModule>
+
