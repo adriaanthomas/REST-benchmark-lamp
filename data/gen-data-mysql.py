@@ -19,3 +19,4 @@ for i in range(1, 8000000):
 
 c.execute("SET autocommit=1")
 c.execute("COMMIT")
+c.execute("OPTIMIZE TABLE rest_data2")
